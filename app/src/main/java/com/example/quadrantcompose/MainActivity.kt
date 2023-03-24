@@ -4,8 +4,6 @@ import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.compose.foundation.layout.*
-import androidx.compose.foundation.layout.ColumnScopeInstance.weight
-import androidx.compose.foundation.layout.RowScopeInstance.weight
 import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Surface
 import androidx.compose.material.Text
@@ -18,6 +16,7 @@ import androidx.compose.ui.Alignment.Companion.CenterStart
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import androidx.compose.ui.unit.sp
 import com.example.quadrantcompose.ui.theme.QuadrantComposeTheme
 import org.intellij.lang.annotations.JdkConstants.HorizontalAlignment
 
@@ -31,54 +30,50 @@ class MainActivity : ComponentActivity() {
                     modifier = Modifier.fillMaxSize(), color = MaterialTheme.colors.background
                 ) {
 
-                Box(
-                    modifier = Modifier.width()
-                ) {
-                        Column(
-                            horizontalAlignment = Alignment.Start
-                        ) {
-                            Text("Text composable")
-                            Text("Displays text and follows Material Design guidelines.")
-                        }
-                    }
+                    Column() {//Материнская колонка
 
 
-                Box(
-
-                ) {
-                        Column(
-                            horizontalAlignment = Alignment.CenterHorizontally
-                        ) {
-                            Text("Image composable")
-                            Text("Creates a composable that lays out and draws a given Painter class object.")
-                        }
-                    }
-                }
+                        Row() {//Верхний ряд
+                            Column( //Левая верхняя
+                                modifier = Modifier.width(intrinsicSize = TODO())
+                            ) {
+                                Text("Text composable")
+                                Text("Displays text and follows Material Design guidelines.")
+                            }
 
 
-                Box(
 
-                ) {
-                    Column(
-                        horizontalAlignment = Alignment.CenterHorizontally
-                    ) {
-                        Text("Row composable")
-                        Text("A layout composable that places its children in a horizontal sequence.")
-                    }
-                }
+                            Column(//Правая верхняя
+                                horizontalAlignment = Alignment.End
+                            ) {
+                                Text("Image composable")
+                                Text("Creates a composable that lays out and draws a given Painter class object.")
+                            }
+                        } //конец верхнего ряда
 
 
-                Box(
+                        Row() {//нижний ряд
+                            Column(//Левая нижняя
+                                horizontalAlignment = Alignment.CenterHorizontally
+                            ) {
+                                Text("Row composable")
+                                Text("A layout composable that places its children in a horizontal sequence.")
+                            }
 
-                ) {
-                    Column(
-                        horizontalAlignment = Alignment.CenterHorizontally
-                    ) {
-                        Text("Column composable")
-                        Text("A layout composable that places its children in a vertical sequence.")
-                    }
-                }
 
+
+                            Column(//Правая нижняя
+                                horizontalAlignment = Alignment.CenterHorizontally
+                            ) {
+                                Text("Column composable")
+                                Text("A layout composable that places its children in a vertical sequence.")
+                            }
+                        } //Конец нижнего ряда
+                    }//Конец материнской Column
+
+
+
+                }//Конец Surface
 
             }
         }
