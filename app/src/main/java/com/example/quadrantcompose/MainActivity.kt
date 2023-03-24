@@ -35,7 +35,7 @@ class MainActivity : ComponentActivity() {
 
                         Row() {//Верхний ряд
                             Column( //Левая верхняя
-                                modifier = Modifier.width(intrinsicSize = TODO())
+                                modifier = Modifier.fillMaxWidth(0.5f)
                             ) {
                                 Text("Text composable")
                                 Text("Displays text and follows Material Design guidelines.")
@@ -44,7 +44,7 @@ class MainActivity : ComponentActivity() {
 
 
                             Column(//Правая верхняя
-                                horizontalAlignment = Alignment.End
+                                modifier = Modifier.fillMaxWidth(0.5f)
                             ) {
                                 Text("Image composable")
                                 Text("Creates a composable that lays out and draws a given Painter class object.")
@@ -54,7 +54,7 @@ class MainActivity : ComponentActivity() {
 
                         Row() {//нижний ряд
                             Column(//Левая нижняя
-                                horizontalAlignment = Alignment.CenterHorizontally
+                                modifier = Modifier.fillMaxWidth(0.5f)
                             ) {
                                 Text("Row composable")
                                 Text("A layout composable that places its children in a horizontal sequence.")
@@ -63,7 +63,7 @@ class MainActivity : ComponentActivity() {
 
 
                             Column(//Правая нижняя
-                                horizontalAlignment = Alignment.CenterHorizontally
+                                modifier = Modifier.fillMaxWidth(0.5f)
                             ) {
                                 Text("Column composable")
                                 Text("A layout composable that places its children in a vertical sequence.")
