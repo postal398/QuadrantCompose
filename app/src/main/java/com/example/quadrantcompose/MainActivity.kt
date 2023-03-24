@@ -4,6 +4,8 @@ import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.compose.foundation.layout.*
+import androidx.compose.foundation.layout.ColumnScopeInstance.weight
+import androidx.compose.foundation.layout.RowScopeInstance.weight
 import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Surface
 import androidx.compose.material.Text
@@ -15,6 +17,7 @@ import androidx.compose.ui.Alignment.Companion.BottomEnd
 import androidx.compose.ui.Alignment.Companion.CenterStart
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
+import androidx.compose.ui.unit.dp
 import com.example.quadrantcompose.ui.theme.QuadrantComposeTheme
 import org.intellij.lang.annotations.JdkConstants.HorizontalAlignment
 
@@ -25,21 +28,24 @@ class MainActivity : ComponentActivity() {
             QuadrantComposeTheme {
                 // A surface container using the 'background' color from the theme
                 Surface(
-                    modifier = Modifier.fillMaxSize(),
-                    color = MaterialTheme.colors.background
+                    modifier = Modifier.fillMaxSize(), color = MaterialTheme.colors.background
                 ) {
-                    Row(
-                        horizontalArrangement = Arrangement.SpaceBetween,
-                        verticalAlignment = Alignment.Top
-                    ){
+
+                Box(
+                    modifier = Modifier.width()
+                ) {
                         Column(
                             horizontalAlignment = Alignment.Start
-
                         ) {
                             Text("Text composable")
                             Text("Displays text and follows Material Design guidelines.")
                         }
+                    }
 
+
+                Box(
+
+                ) {
                         Column(
                             horizontalAlignment = Alignment.CenterHorizontally
                         ) {
@@ -47,25 +53,33 @@ class MainActivity : ComponentActivity() {
                             Text("Creates a composable that lays out and draws a given Painter class object.")
                         }
                     }
+                }
 
-                    Row(
-                        verticalAlignment = Alignment.Bottom
+
+                Box(
+
+                ) {
+                    Column(
+                        horizontalAlignment = Alignment.CenterHorizontally
                     ) {
-                        Column(
-                            horizontalAlignment = Alignment.CenterHorizontally
-                        ) {
-                            Text("Row composable")
-                            Text("A layout composable that places its children in a horizontal sequence.")
-                        }
-                        Column(
-                            horizontalAlignment = Alignment.CenterHorizontally
-                        ) {
-                            Text("Column composable")
-                            Text("A layout composable that places its children in a vertical sequence.")
-                        }
-
+                        Text("Row composable")
+                        Text("A layout composable that places its children in a horizontal sequence.")
                     }
                 }
+
+
+                Box(
+
+                ) {
+                    Column(
+                        horizontalAlignment = Alignment.CenterHorizontally
+                    ) {
+                        Text("Column composable")
+                        Text("A layout composable that places its children in a vertical sequence.")
+                    }
+                }
+
+
             }
         }
     }
