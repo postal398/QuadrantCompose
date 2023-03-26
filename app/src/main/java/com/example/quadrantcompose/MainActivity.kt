@@ -38,51 +38,64 @@ class MainActivity : ComponentActivity() {
 
 
                         Row() {//Верхний ряд
+                            Box(){
                             Column( //Левая верхняя
+                                verticalArrangement = Arrangement.Center, horizontalAlignment = Alignment.CenterHorizontally,
                                 modifier = Modifier.fillMaxWidth(0.5f).fillMaxHeight(0.5f).background(
-                                    Color.Green)
+                                    Color.Green).padding(16.dp)
 
 
 
                             ) {
-                                Text("Text composable", textAlign = TextAlign.Center)
+                                Text("Text composable",
+                                    textAlign = TextAlign.Center, fontWeight = FontWeight.Bold,
+                                    modifier = Modifier.padding(end = 16.dp))
                                 Text("Displays text and follows Material Design guidelines.", textAlign = TextAlign.Center)
-                            }
+                            }}
 
 
-
+                            Box(){
                             Column(//Правая верхняя
+                                verticalArrangement = Arrangement.Center, horizontalAlignment = Alignment.CenterHorizontally,
                                 modifier = Modifier.fillMaxWidth(1f).fillMaxHeight(0.5f).background(
-                                    Color.Yellow)
+                                    Color.Yellow).padding(16.dp)
                             ) {
-                                Text("Image composable", textAlign = TextAlign.Center)
+                                Text("Image composable",
+                                    textAlign = TextAlign.Center, fontWeight = FontWeight.Bold,
+                                    modifier = Modifier.padding(end = 16.dp))
                                 Text("Creates a composable that lays out and draws a given Painter class object.", textAlign = TextAlign.Center)
                             }
-                        } //конец верхнего ряда
+                        }} //конец верхнего ряда
 
 
                         Row() {//нижний ряд
+                            Box(){
                             Column(//Левая нижняя
+                                verticalArrangement = Arrangement.Center, horizontalAlignment = Alignment.CenterHorizontally,
                                 modifier = Modifier.fillMaxWidth(0.5f).fillMaxHeight(1f).
-                                background(Color.Cyan)
+                                background(Color.Cyan).padding(16.dp)
                             ) {
-                                Text("Row composable", textAlign = TextAlign.Center)
+                                Text("Row composable",
+                                    textAlign = TextAlign.Center, fontWeight = FontWeight.Bold,
+                                    modifier = Modifier.padding(end = 16.dp))
                                 Text("A layout composable that places its children in a horizontal sequence.", textAlign = TextAlign.Center)
-                            }
+                            }}
 
 
-
+                            Box(){
                             Column(//Правая нижняя
                                 verticalArrangement = Arrangement.Center, horizontalAlignment = Alignment.CenterHorizontally,
                                 modifier = Modifier.fillMaxWidth(1f).fillMaxHeight(1f)
-                                    .background(Color.LightGray)
+                                    .background(Color.LightGray).padding(16.dp)
                             ) {
                                 Text("Column composable",
                                     textAlign = TextAlign.Center, fontWeight = FontWeight.Bold,
                                     modifier = Modifier.padding(end = 16.dp))
                                 Text("A layout composable that places its children in a vertical sequence.", textAlign = TextAlign.Center)
                             }
-                        } //Конец нижнего ряда
+                        }} //Конец нижнего ряда
+
+
                     }//Конец материнской Column
 
 
